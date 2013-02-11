@@ -1,0 +1,2 @@
+= @video.get('title')
+%img{:src => @video.get('image')}

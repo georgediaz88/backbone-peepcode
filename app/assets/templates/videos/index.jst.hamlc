@@ -1,0 +1,4 @@
+#app
+  %h1 Peepcode Tracker
+  %ul.screencasts
+  %a(href="#videos/new") New Screencast

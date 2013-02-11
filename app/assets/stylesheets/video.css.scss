@@ -1,0 +1,29 @@
+#app {
+    ul.screencasts {
+        li {
+          position:relative;
+          padding:0.5em;
+          font-size: 25px;
+          color:red;
+          border-bottom: 1px solid #ccc;
+          &.watched {
+            color:green;
+          }
+          img {
+            height: 30px;
+            float:right;
+            position: absolute;
+            right:10px;
+          }
+      }
+    }
+
+}
+
+#container {
+    label.error {
+        display:inline-block;
+        color:red;
+        margin:0.5em;
+    }
+}

@@ -1,0 +1,4 @@
+- if @video
+  %p#title
+    = @video.get('title')
+  %img{:src => @video.get('image')}
