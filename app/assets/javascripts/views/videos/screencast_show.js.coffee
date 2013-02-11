@@ -7,4 +7,4 @@ class VideoTracker.Views.ScreencastShow extends Backbone.View
 
   render: ->
     $(@el).html(@template(video: @model))
-    this
+    @

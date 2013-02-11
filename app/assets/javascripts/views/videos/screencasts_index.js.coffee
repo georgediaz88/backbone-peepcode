@@ -8,7 +8,7 @@ class VideoTracker.Views.ScreencastsIndex extends Backbone.View
   render: ->
     $(@el).html(@template())
     _.each(@collection.models, @appendEntry)
-    this
+    @
 
   appendEntry: (entry) ->
     view = new VideoTracker.Views.Screencast(model: entry)
