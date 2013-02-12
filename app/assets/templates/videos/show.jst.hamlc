@@ -2,3 +2,6 @@
   %p#title
     = @video.get('title')
   %img{:src => @video.get('image')}
+  %br
+
+  %a{:href => "#", :class => 'delete'} delete

@@ -26,4 +26,10 @@ class VideosController < ApplicationController
     respond_with @video
   end
 
+  def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+    render nothing: true
+  end
+
 end

@@ -34,6 +34,8 @@ class VideoTracker.Views.ScreencastNew extends Backbone.View
 
   handlerErro: (entry, response) ->
     if response.status == 422
+      block = ''
       errors = $.parseJSON(response.responseText).errors
       for attribute, messages of errors
-        alert "#{attribute} #{message}" for message in messages
+        block += "#{attribute} #{message}<br/>" for message in messages
+      $('.alert').show().children('.error_list').html(block)
