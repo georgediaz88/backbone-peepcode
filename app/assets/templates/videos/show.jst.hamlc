@@ -4,4 +4,7 @@
   %img{:src => @video.get('image')}
   %br
 
-  %a{:href => "#", :class => 'delete'} delete
+  %span
+    %a{:href => "#", :class => 'delete'} delete
+    |
+    %a{:href => "#"} back
