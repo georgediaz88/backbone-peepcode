@@ -1,8 +1,9 @@
 class VideoTracker.Routers.Screencasts extends Backbone.Router
   routes:
-    ''                   : 'index'
-    'videos/new' : 'new'
-    'videos/:id'   : 'show'
+    ''                    : 'index'
+    'videos/new'  : 'new'
+    'videos/:id'    : 'show'
+    '*other'          : 'index'
 
 
   initialize: (options) ->

@@ -1,2 +1,5 @@
-= @video.get('title')
+%a#title(href='#')
+  = @video.get('title')
+%a.eye(href="#videos/#{@video.get('id')}")
+  %i.icon-eye-open.icon-black
 %img{:src => @video.get('image')}

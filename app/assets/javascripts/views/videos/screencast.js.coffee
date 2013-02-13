@@ -5,7 +5,7 @@ class VideoTracker.Views.Screencast extends Backbone.View
   # Using a template here to clean up the render a lil bit ...
 
   events:
-    'click ': 'toggleWatched'
+    'click a#title': 'toggleWatched'
 
   initialize: ->
 
@@ -15,6 +15,7 @@ class VideoTracker.Views.Screencast extends Backbone.View
     this
 
   toggleWatched: (e) ->
+    e.preventDefault()
     e.stopPropagation()
     if @model.get('watched')
       @model.set({'watched': false}).save()
