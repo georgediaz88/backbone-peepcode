@@ -28,7 +28,7 @@ class VideoTracker.Views.ScreencastNew extends Backbone.View
       image: @$('#image').val()
     @collection.create attributes,
       url: '/videos'
-      wait: true
+      #wait: true
       success: -> $('#new_entry')[0].reset()
       error: @handlerErro
 
