@@ -5,6 +5,8 @@
   %br
 
   %span
-    %a{:href => "#", :class => 'delete'} delete
-    |
     %a{:href => "#"} back
+    |
+    %a{:href => "#", :class => 'edit'} edit
+    |
+    %a{:href => "#", :class => 'delete'} delete

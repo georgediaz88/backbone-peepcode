@@ -1,12 +1,12 @@
-class VideoTracker.Views.ScreencastNew extends Backbone.View
+class VideoTracker.Views.ScreencastEdit extends Backbone.View
   el: "#container"
-  template: JST["videos/new"]
+  template: JST["videos/edit"]
 
   initialize: ->
-    @collection.on('add', @addNewEntry, @)
+    @model.on 'change', @render, @
 
   events:
-    'submit #new_entry' : 'createEntry'
+    'submit #reg_entry' : 'updateEntry'
 
   render: ->
     $(@el).html(@template(video: @model))
@@ -16,23 +16,20 @@ class VideoTracker.Views.ScreencastNew extends Backbone.View
         image: 'required'
     @
 
-  addNewEntry: (entry) ->
-    console.log entry
-    window.location.hash = ""
-
-  createEntry: (e) ->
+  updateEntry: (e) ->
     e.preventDefault()
     attributes =
       title: @$('#title').val()
       image: @$('#image').val()
-    @collection.create attributes,
-      url: '/videos'
+    @model.save attributes,
       wait: true
-      success: -> $('#new_entry')[0].reset()
+      success: -> window.location.hash = ''
       error: @handlerErro
 
   handlerErro: (entry, response) ->
-    if response.status == 422
+    if response.status == 204 #technically a good response
+      window.location.hash = ''
+    else if response.status == 422
       block = ''
       errors = $.parseJSON(response.responseText).errors
       for attribute, messages of errors

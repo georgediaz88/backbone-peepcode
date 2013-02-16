@@ -1,0 +1,12 @@
+%h1 Edit post
+%form#reg_entry
+  .field
+    %label{:for => "title"} Title
+    %br
+    %input#title{:name => "title", :type => "text", :value => @video.get('title')}
+  .field
+    %label{:for => "body"} ImageLink
+    %br
+    %input#image{:name => "image", :type => "text", :value => @video.get('image')}
+  .actions
+    %input{:type => "submit", :value => "update", :class => "btn btn-primary"}

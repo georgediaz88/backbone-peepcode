@@ -4,6 +4,7 @@ class VideoTracker.Views.ScreencastShow extends Backbone.View
 
   events:
     'click .delete' : 'deleteItem'
+    'click .edit' : 'editItem'
 
   initialize: ->
     @model.on 'change', @render, @
@@ -16,3 +17,7 @@ class VideoTracker.Views.ScreencastShow extends Backbone.View
     e.preventDefault()
     @model.destroy url: "videos/#{@model.id}"
     window.location.hash = ""
+
+  editItem: (e) ->
+    e.preventDefault()
+    window.location.hash = "videos/#{@model.id}/edit"

@@ -1,8 +1,7 @@
 class VideoTracker.Views.Screencast extends Backbone.View
   tagName: 'li'
-  #className: 'sets a class on the tag'
   template: JST['videos/screencast']
-  # Using a template here to clean up the render a lil bit ...
+  #className: 'sets a class on the tag'
 
   events:
     'click a#title': 'toggleWatched'
@@ -18,9 +17,11 @@ class VideoTracker.Views.Screencast extends Backbone.View
     e.preventDefault()
     e.stopPropagation()
     if @model.get('watched')
-      @model.set({'watched': false}).save()
+      @model.save watched: false,
+        url: "videos/#{@model.id}/update_watched"
     else
-      @model.set({'watched': true}).save()
+      @model.save watched: true,
+        url: "videos/#{@model.id}/update_watched"
     $(@el).toggleClass('watched')
 
 

@@ -1,9 +1,10 @@
 class VideoTracker.Routers.Screencasts extends Backbone.Router
   routes:
-    ''                    : 'index'
-    'videos/new'  : 'new'
-    'videos/:id'    : 'show'
-    '*other'          : 'index'
+    ''                         : 'index'
+    'videos/new'       : 'new'
+    'videos/:id'         : 'show'
+    'videos/:id/edit' : 'edit'
+    '*other'               : 'index'
 
 
   initialize: (options) ->
@@ -24,6 +25,12 @@ class VideoTracker.Routers.Screencasts extends Backbone.Router
     # moved below to view bind
     # screencasts.bind 'add', =>
     #   @navigate '', {trigger: true}
+
+  edit: (id) ->
+    screencast = new VideoTracker.Models.Screencast id: id
+    screencasts = new VideoTracker.Collections.Screencasts
+    view = new VideoTracker.Views.ScreencastEdit({collection: screencasts, model: screencast})
+    screencast.fetch()
 
   show: (id) ->
     screencast = new VideoTracker.Models.Screencast id: id

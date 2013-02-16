@@ -12,13 +12,9 @@ class VideosController < ApplicationController
   end
 
   def update
-      @video = Video.find(params[:id])
-      if [true, false, "true", "false"].include? params[:watched]
-        @video.update_attributes(watched: params[:watched])
-        respond_with @video
-      else
-        render nothing: true, status: 304
-      end
+    @video = Video.find(params[:id])
+    @video.update_attributes(params[:video])
+    respond_with @video
   end
 
   def create
@@ -30,6 +26,16 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
     @video.destroy
     render nothing: true
+  end
+
+  def update_watched
+    @video = Video.find(params[:id])
+    if [true, false, "true", "false"].include? params[:watched]
+      @video.update_attributes(watched: params[:watched])
+      respond_with @video
+    else
+      render nothing: true, status: 304
+    end
   end
 
 end
