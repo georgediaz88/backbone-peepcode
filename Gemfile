@@ -20,11 +20,9 @@ group :assets do
   gem "less-rails"
   gem 'haml-rails'
   gem 'haml_coffee_assets'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 end
 
 gem 'jquery-rails'
