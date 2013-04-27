@@ -31,7 +31,7 @@ class VideosController < ApplicationController
   def update_watched
     @video = Video.find(params[:id])
     if [true, false, "true", "false"].include? params[:watched]
-      @video.update_attributes(watched: params[:watched])
+      @video.update_attribute(:watched, params[:watched])
       respond_with @video
     else
       render nothing: true, status: 304

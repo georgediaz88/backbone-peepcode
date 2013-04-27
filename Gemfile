@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead for Rails 4 latest:
-gem 'rails', git: 'git://github.com/rails/rails.git'
+gem 'rails', git: 'rails/rails.git'
 
 gem 'sqlite3'
 gem 'peepcode'
@@ -12,15 +12,13 @@ gem 'rails-backbone'
 gem 'jquery-rails'
 gem 'protected_attributes'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails', github: 'rails/sass-rails'
   gem 'coffee-rails', github: 'rails/coffee-rails'
   gem "less-rails"
   gem 'haml-rails'
   gem 'haml_coffee_assets'
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', platforms: :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
