@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead for Rails 4 latest:
-gem 'rails', git: 'rails/rails.git'
+gem 'rails', github: 'rails/rails'
 
 gem 'sqlite3'
 gem 'peepcode'

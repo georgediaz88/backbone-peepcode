@@ -13,12 +13,12 @@ class VideosController < ApplicationController
 
   def update
     @video = Video.find(params[:id])
-    @video.update_attributes(params[:video])
+    @video.update_attributes(video_params)
     respond_with @video
   end
 
   def create
-    @video = Video.create(params[:video])
+    @video = Video.create(video_params)
     respond_with @video
   end
 
@@ -36,6 +36,12 @@ class VideosController < ApplicationController
     else
       render nothing: true, status: 304
     end
+  end
+
+  private
+
+  def video_params
+    params.require(:video).permit(:title, :image)
   end
 
 end
