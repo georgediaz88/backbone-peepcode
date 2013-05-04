@@ -2,9 +2,7 @@ VideoTracker::Application.routes.draw do
   root :to => 'welcome#index'
 
   resources :videos do
-    member do
-      put 'update_watched'
-    end
+    put 'update_watched', to: 'videos#update_watched'
   end
 
   # The priority is based upon order of creation:
