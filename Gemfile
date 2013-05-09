@@ -10,19 +10,17 @@ gem 'rspec-rails'
 gem 'twitter-bootstrap-rails'
 gem 'rails-backbone'
 gem 'jquery-rails'
-gem 'protected_attributes'
 
-group :assets do
-  gem 'sass-rails', github: 'rails/sass-rails'
-  gem 'coffee-rails', github: 'rails/coffee-rails'
-  gem "less-rails"
-  gem 'haml-rails'
-  gem 'haml_coffee_assets'
-  gem 'therubyracer', platforms: :ruby
-  gem 'uglifier', '>= 1.0.3'
-end
+gem 'sass-rails', github: 'rails/sass-rails'
+gem 'coffee-rails', github: 'rails/coffee-rails'
+gem "less-rails"
+gem 'haml-rails'
+gem 'haml_coffee_assets'
+gem 'therubyracer', platforms: :ruby
+gem 'uglifier', '>= 1.0.3'
 
 group :development do
+  gem 'guard-rspec'
   gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller'
