@@ -27,6 +27,14 @@ describe VideosController do
         }.to change(Video, :count).by(1)
       end
     end
+    context "with invalid attributes" do
+      it "should not create a new video" do
+        video = FactoryGirl.create(:video)
+        expect{
+          post :create, video: FactoryGirl.attributes_for(:video), format: :json
+        }.to_not change(Video, :count).by(1)
+      end
+    end
   end
 
   describe "PUT update json" do
