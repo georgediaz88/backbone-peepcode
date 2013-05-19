@@ -20,10 +20,17 @@ gem 'therubyracer', platforms: :ruby
 gem 'uglifier', '>= 1.0.3'
 
 group :development do
-  gem 'guard-rspec'
   gem 'pry'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
 end
 
+group :test, :development do
+  gem 'guard-rspec'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'database_cleaner'
+end
