@@ -6,7 +6,6 @@ gem 'rails', github: 'rails/rails'
 gem 'sqlite3'
 gem 'peepcode'
 gem 'thin'
-gem 'rspec-rails'
 gem 'twitter-bootstrap-rails'
 gem 'rails-backbone'
 gem 'jquery-rails'
@@ -27,6 +26,7 @@ group :development do
 end
 
 group :test, :development do
+  gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'factory_girl_rails'
 end
