@@ -8,7 +8,7 @@ class VideoTracker.Routers.Screencasts extends Backbone.Router
 
 
   initialize: (options) ->
-    # Refactored below out...
+    # Refactored below out...maybe remove?
     # @collection = new VideoTracker.Collections.Screencasts()
     # @collection.fetch()
 
